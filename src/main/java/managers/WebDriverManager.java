@@ -10,14 +10,14 @@ public class WebDriverManager {
         this.webDriverType = webDriverType;
     }
 
-    private WebDriver driver;
+    private static WebDriver driver;
 
-    private String webDriverType;
+    private static String webDriverType;
 
-    private WebDriver createDriver() {
+    private static WebDriver createDriver() {
         switch (webDriverType) {
             case "CHROME":
-                System.setProperty("webDriver.chrome.driver", "src/main/drivers/chromeDriver.exe");
+                System.setProperty("webdriver.chrome.driver", "src/main/drivers/chromedriver.exe");
                 driver = new ChromeDriver();
                 break;
             case "FIREFOX":
@@ -25,12 +25,12 @@ public class WebDriverManager {
                 driver = new FirefoxDriver();
                 break;
             default:
-                System.out.println("This drivers is not created");
+                System.out.println("This driver is not created");
         }
         return driver;
     }
 
-    public WebDriver getDriver() {
+    public static WebDriver getDriver() {
         if (driver == null) {
             createDriver();
         }
@@ -40,7 +40,7 @@ public class WebDriverManager {
     public void closeDriver() {
         if (driver != null) {
             driver.close();
-            System.out.println("Driver is close");
+            System.out.println("Driver is closed");
         }
     }
 }
