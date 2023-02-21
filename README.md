@@ -15,3 +15,22 @@ The applied knowledge include:
 4. Methods
 5. Constructor
 6. Switch instruction
+
+*Objects Page :*
+Contain 6 classes that are used to:
+1. Open the Open-Cart demo website.
+2. Create a new user on this page.
+3. Logging out the user.
+4. Reconecting the user through login.
+5. Closing the driver.
+
+The applied knowledge include:
+1. Data type
+2. Variables
+3. Access modifiers
+4. Methods
+5. Constructor
+6. OOP principles
+7. Inheritance
+8. Encapsulation
+9. Overriding
