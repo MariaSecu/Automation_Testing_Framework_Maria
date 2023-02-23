@@ -34,3 +34,18 @@ The applied knowledge include:
 7. Inheritance
 8. Encapsulation
 9. Overriding
+
+*Junit Practice:*
+Contains a class that are used to:
+1. Open demo-open cart website before each test.
+2. Create unit testings.
+3. Close demo-open cart website after each test.
+
+The applied knowledge include:
+1. Access modifiers
+2. Constructor
+3. Methods
+4. Annotations
+5. Dependencies
+6. Exceptions
+

@@ -11,7 +11,7 @@ public abstract class Page {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//*[@id=\"top-links\"]/ul/li[2]/a/span[2]")
+    @FindBy(xpath = "//*[@id=\"top-links\"]/ul/li[2]")
     protected WebElement myAccountButton;
 
     @FindBy(xpath = "//*[@class=\"dropdown open\"]/ul/li[1]/a")
