@@ -1,13 +1,12 @@
 package pageObjects;
 
-import managers.DataManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class RegisterPage extends Page{
+public class RegisterPage extends Page {
 
-    public RegisterPage(WebDriver driver){
+    public RegisterPage(WebDriver driver) {
         super(driver);
 
     }
@@ -37,8 +36,7 @@ public class RegisterPage extends Page{
     private WebElement continueButton;
 
 
-
-    public void fillInTheRegisterPage(String firstName,String lastName, String email, String phone, String password, String confirmPassword) throws InterruptedException {
+    public void fillInTheRegisterPage(String firstName, String lastName, String email, String phone, String password, String confirmPassword) throws InterruptedException {
         firstNameInput.sendKeys(firstName);
         lastNameInput.sendKeys(lastName);
         Thread.sleep(2000);
@@ -50,4 +48,11 @@ public class RegisterPage extends Page{
         continueButton.click();
 
     }
+
+    public boolean allTheElementsAreDisplyed() {
+        return firstNameInput.isDisplayed() && lastNameInput.isDisplayed() && emailInput.isDisplayed() && telephoneInput.isDisplayed()
+                && passwordInput.isDisplayed() && passwordConfirmInput.isDisplayed()
+                && privaceCheckBox.isDisplayed() && continueButton.isDisplayed();
+    }
+
 }
