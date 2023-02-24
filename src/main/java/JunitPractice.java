@@ -38,7 +38,7 @@ public class JunitPractice {
 
         Thread.sleep(2000);
         RegisterPage registerPage = new RegisterPage(webDriverManager.getDriver());
-        Assertions.assertTrue(registerPage.allTheElementsAreDisplyed(), "There are no registerPage elements");
+        Assertions.assertTrue(registerPage.allTheElementsAreDisplyed(), "There are no register page elements");
 
 
     }

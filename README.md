@@ -49,3 +49,19 @@ The applied knowledge include:
 5. Dependencies
 6. Exceptions
 
+*Cucumber implimentation:*
+Contains classes and files that are used to:
+1. Creating features for automated tests
+2. Open demo-open cart 
+3. Click the myAccount and Register button
+4. Closing the website
+
+The applied knowledge include:
+1. Access modifiers
+2. Annotations
+3. Exceptions
+4. Features
+5. Cucumber framework
+6. Methods
+
+
