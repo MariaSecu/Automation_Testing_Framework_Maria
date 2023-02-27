@@ -44,6 +44,25 @@ public abstract class Page {
     }
 
 
+    public void clickOnMyAccountBtn() {
+        myAccountButton.click();
+    }
+
+    ;
+
+    //    An abstract class can contain both abstract and not abstract methods
+    //the abstract methods have to be overwritten
+    public void clickOnRegisterButton() {
+        registereButton.click();
+    }
+
+    ;
+
+    public boolean registerButtonIsDisplayed() throws InterruptedException {
+        Thread.sleep(3000);
+        return registereButton.isDisplayed();
+    }
+
 }
 
 
