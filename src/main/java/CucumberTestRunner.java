@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
         features = "src/main/java/features",
         glue = "stepDefinition",
         snippets = SnippetType.CAMELCASE,
-        tags = {},
+        tags = {"@run"},
         plugin = {"pretty", "html:target/cucumber-reports"}
 )
 
-public class CucumberTestRuner {
+public class CucumberTestRunner {
 }

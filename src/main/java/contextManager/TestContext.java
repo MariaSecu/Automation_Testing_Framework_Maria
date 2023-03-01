@@ -8,12 +8,10 @@ public class TestContext {
 
     public TestContext() {
         webDriverManager = new WebDriverManager("CHROME");
-
     }
 
     public WebDriverManager getWebDriverManager() {
         return webDriverManager;
-
     }
 
 }

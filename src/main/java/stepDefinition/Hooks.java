@@ -1,8 +1,8 @@
 package stepDefinition;
 
 import contextManager.TestContext;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 
 public class Hooks {
 
@@ -12,15 +12,15 @@ public class Hooks {
         testContext = context;
     }
 
-    @BeforeEach
-    public void setUpBeforeEachTest() {
+    @Before
+    public void setUpBeforeEachTest() throws InterruptedException {
+        Thread.sleep(3000);
         testContext.getWebDriverManager().getDriver();
 
     }
 
-    @AfterEach
+    @After
     public void tearDownAfterEachTest() throws InterruptedException {
-        Thread.sleep(3000);
         testContext.getWebDriverManager().closeDriver();
     }
 }
