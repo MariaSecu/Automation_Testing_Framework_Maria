@@ -55,4 +55,12 @@ public class RegisterPage extends Page {
                 && privaceCheckBox.isDisplayed() && continueButton.isDisplayed();
     }
 
+    public void clickOnThePrivacyButton() {
+        privaceCheckBox.click();
+    }
+
+    public void clickOnTheContinueButton() {
+        continueButton.click();
+    }
+
 }

@@ -10,15 +10,20 @@ public class WebDriverManager {
         this.webDriverType = webDriverType;
     }
 
-    private static WebDriver driver;
+    private WebDriver driver;
 
     private static String webDriverType;
 
-    private static WebDriver createDriver() {
+    private static int counter = 0;
+
+    private WebDriver createDriver() {
         switch (webDriverType) {
             case "CHROME":
+                counter++;
+                System.out.println("Numarul rularii " + counter);
                 System.setProperty("webdriver.chrome.driver", "src/main/drivers/chromedriver.exe");
                 driver = new ChromeDriver();
+
                 break;
             case "FIREFOX":
                 System.setProperty("webDriver.firefox.driver", "src/main/drivers/geckodriver.exe");
@@ -30,7 +35,7 @@ public class WebDriverManager {
         return driver;
     }
 
-    public static WebDriver getDriver() {
+    public WebDriver getDriver() {
         if (driver == null) {
             createDriver();
         }

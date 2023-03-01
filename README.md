@@ -64,4 +64,20 @@ The applied knowledge include:
 5. Cucumber framework
 6. Methods
 
+*Register flow features*
+Contain Scenario outline that are used to:
+1. Open demo-open cart
+2. Create an usser acount
+1. Display a error message
+2. Check if the password is correctly
+
+The applied knowledge include:
+1. Annotations
+2. Exceptions
+3. Features
+4. Cucumber framework
+5. Methods
+6. Gherkin language
+7. For function
+8. Access modifiers
 

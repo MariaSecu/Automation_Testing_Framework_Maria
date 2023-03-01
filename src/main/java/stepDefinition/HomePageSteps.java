@@ -6,7 +6,6 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import managers.WebDriverManager;
 import org.junit.jupiter.api.Assertions;
 import pageObjects.HomePage;
 
@@ -47,7 +46,7 @@ public class HomePageSteps {
 
     @Then("^the new URL contain the following \"([^\"]*)\"$")
     public void theNewURLContainTheFollowingString(String contentKey) {
-        Boolean stringIsPresentInUrl = WebDriverManager.getDriver().getCurrentUrl().contains(contentKey);
+        Boolean stringIsPresentInUrl = testContext.getWebDriverManager().getDriver().getCurrentUrl().contains(contentKey);
         Assertions.assertTrue(stringIsPresentInUrl, "The url contain " + contentKey);
 
     }
@@ -55,8 +54,16 @@ public class HomePageSteps {
     @And("^the \"([^\"]*)\" is close$")
     public void theIsClose(String link) throws Throwable {
         Thread.sleep(2500);
-        WebDriverManager.getDriver().close();
+        testContext.getWebDriverManager().getDriver().close();
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }
+
+    @Then("^\"([^\"]*)\" is present within the current url$")
+    public void isPresentWithinTheCurrentUrl(String urlKeyWord){
+        Assertions.assertTrue(testContext.getWebDriverManager().getDriver().getCurrentUrl().contains(urlKeyWord));
+    }
+
+
+
 }
