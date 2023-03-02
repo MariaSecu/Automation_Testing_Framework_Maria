@@ -81,3 +81,17 @@ The applied knowledge include:
 7. For function
 8. Access modifiers
 
+*Waiter logs*
+Contains two new files that are used to:
+1. Aplicate the implicit wait
+2. Logger of actions performed by the driver
+
+The applied knowledge include:
+1. Access modifiers
+2. Cucumber framework
+3. Methods
+4. Wait methods
+5. If statement
+6. Variables
+7. Inheritance
+
