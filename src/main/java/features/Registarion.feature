@@ -40,4 +40,3 @@ Feature: register feature test suite
       | 123                    | 123                    | Password must be between 4 and 20 characters!  |
       | 1234567890987654324567 | 1234567890987654324567 | Password must be between 4 and 20 characters!  |
       | Password               | Password1              | Password confirmation does not match password! |
-

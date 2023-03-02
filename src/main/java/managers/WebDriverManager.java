@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.time.Duration;
+
 public class WebDriverManager {
 
     public WebDriverManager(String webDriverType) {
@@ -14,13 +16,9 @@ public class WebDriverManager {
 
     private static String webDriverType;
 
-    private static int counter = 0;
-
     private WebDriver createDriver() {
         switch (webDriverType) {
             case "CHROME":
-                counter++;
-                System.out.println("Numarul rularii " + counter);
                 System.setProperty("webdriver.chrome.driver", "src/main/drivers/chromedriver.exe");
                 driver = new ChromeDriver();
 
@@ -32,6 +30,9 @@ public class WebDriverManager {
             default:
                 System.out.println("This driver is not created");
         }
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(90));
+
         return driver;
     }
 

@@ -6,6 +6,8 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import managers.LoggerManager;
+import managers.WebDriverWaitManager;
 import org.junit.jupiter.api.Assertions;
 import pageObjects.HomePage;
 
@@ -29,8 +31,9 @@ public class HomePageSteps {
 
     @When("my Account button is clicked$")
     public void myAccountButtonIsClicked() throws Throwable {
-        Thread.sleep(2500);
+        WebDriverWaitManager.toBeClickable(homePage.getMyAccountButton(), testContext.getWebDriverManager().getDriver());
         homePage.clickOnMyAccountBtn();
+        LoggerManager.logInfo("Class methode:" + homePage + " is invocated");
     }
 
 
@@ -41,6 +44,8 @@ public class HomePageSteps {
 
     @And("^register account button is clicked$")
     public void registerAccountButtonIsClicked() {
+
+        WebDriverWaitManager.toBeClickable(homePage.getRegistereButton(), testContext.getWebDriverManager().getDriver());
         homePage.clickOnRegisterButton();
     }
 
@@ -52,18 +57,13 @@ public class HomePageSteps {
     }
 
     @And("^the \"([^\"]*)\" is close$")
-    public void theIsClose(String link) throws Throwable {
-        Thread.sleep(2500);
+    public void theIsClose(String link) {
         testContext.getWebDriverManager().getDriver().close();
-        // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }
 
     @Then("^\"([^\"]*)\" is present within the current url$")
-    public void isPresentWithinTheCurrentUrl(String urlKeyWord){
+    public void isPresentWithinTheCurrentUrl(String urlKeyWord) {
         Assertions.assertTrue(testContext.getWebDriverManager().getDriver().getCurrentUrl().contains(urlKeyWord));
     }
-
-
-
 }

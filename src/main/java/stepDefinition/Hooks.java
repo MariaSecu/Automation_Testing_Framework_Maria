@@ -14,7 +14,6 @@ public class Hooks {
 
     @Before
     public void setUpBeforeEachTest() throws InterruptedException {
-        Thread.sleep(3000);
         testContext.getWebDriverManager().getDriver();
 
     }

@@ -7,9 +7,14 @@ import org.openqa.selenium.support.PageFactory;
 
 public abstract class Page {
 
+    //private WebDriver currentDriver;
+
     public Page(WebDriver driver) {
+        //currentDriver = driver;
         PageFactory.initElements(driver, this);
+
     }
+
 
     @FindBy(xpath = "//*[@id=\"top-links\"]/ul/li[2]")
     protected WebElement myAccountButton;
@@ -48,18 +53,20 @@ public abstract class Page {
         myAccountButton.click();
     }
 
-    ;
+    public WebElement getMyAccountButton() {
+        return myAccountButton;
+    }
 
-    //    An abstract class can contain both abstract and not abstract methods
-    //the abstract methods have to be overwritten
     public void clickOnRegisterButton() {
         registereButton.click();
     }
 
-    ;
+    public WebElement getRegistereButton() {
+        return registereButton;
+    }
 
-    public boolean registerButtonIsDisplayed() throws InterruptedException {
-        Thread.sleep(3000);
+    public boolean registerButtonIsDisplayed() {
+        //WebDriverWaitManager.toBeVisible(registereButton,  );
         return registereButton.isDisplayed();
     }
 
